@@ -1,3 +1,8 @@
+const http = require("http");
+
+const hostname = "localhost";
+const port = 3000;
+
 const path = require("path");
 const fs = require("fs");
 
@@ -42,4 +47,8 @@ const server = http.createServer((req, res) => {
       `<html><body><h1>Error 404: ${req.method} not supported</h1></body></html>`
     );
   }
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
 });
